@@ -91,10 +91,7 @@ RUN     apk update                       && \
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# Set up the volumes and working directory
-VOLUME ["/app"]
 WORKDIR /app
 
 # Set up the command arguments
-CMD ["-"]
-ENTRYPOINT ["composer", "--ansi"]
+CMD ["composer"]
