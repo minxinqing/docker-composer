@@ -15,7 +15,6 @@ RUN     apk update                       && \
                 $PHPIZE_DEPS                \
                 zlib-dev                    \
                 cyrus-sasl-dev              \
-                git                         \
                 autoconf                    \
                 g++                         \
                 libtool                     \
@@ -23,6 +22,7 @@ RUN     apk update                       && \
                 pcre-dev                 && \
         \
         apk add --no-cache                  \
+            git                             \
             tini                            \
             libintl                         \
             icu                             \
@@ -90,6 +90,7 @@ RUN     apk update                       && \
         rm -rf /tmp/* /var/cache/apk/*
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
 
 WORKDIR /app
 
